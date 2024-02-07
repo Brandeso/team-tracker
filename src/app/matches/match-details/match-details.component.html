@@ -1,1 +1,9 @@
-<p>match-details works!</p>
+<section class="match">
+  <img class="match-photo"
+    src="/assets/cover.jpg"
+    alt="Cover photo"
+    crossorigin />
+  <h2 class="match-heading">{{ matchDetails.data.localTeam }} vs {{ matchDetails.data.awayTeam }}</h2>
+  <p class="match-result"> Resultado: {{ matchDetails.data.localGoals }} - {{ matchDetails.data.awayGoals }}</p>
+  <a [routerLink]="['/match', matchDetails.id]">Ver más</a>
+</section>

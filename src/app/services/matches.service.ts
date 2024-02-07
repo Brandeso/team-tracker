@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { CollectionReference, DocumentData, Firestore, QuerySnapshot, addDoc, collection, deleteDoc, doc, getDocs, getFirestore, onSnapshot, updateDoc } from 'firebase/firestore';
+import { CollectionReference, DocumentData, Firestore, QuerySnapshot, addDoc, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, onSnapshot, updateDoc } from 'firebase/firestore';
 import { Subject } from 'rxjs';
 import { environment } from '../../environments/environments';
 import { Match } from '../interfaces/match';
@@ -53,5 +53,8 @@ export class MatchesService {
     const docRef = doc(this.db, 'matches', docId);
     await updateDoc(docRef, { deleted: true });
     return;
+  }
+
+  async getSingleMatch(docId: string) {
   }
 }
