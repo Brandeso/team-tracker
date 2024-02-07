@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatchInfoComponent } from '../matches/match-info/match-info.component';
+import { RouterOutlet } from '@angular/router';
+import { MatchDashboardComponent } from '../matches/match-dashboard/match-dashboard.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatchInfoComponent],
+  imports: [CommonModule, MatchDashboardComponent, RouterOutlet],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

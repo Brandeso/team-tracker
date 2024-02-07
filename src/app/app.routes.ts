@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { MatchDashboardComponent } from './matches/match-dashboard/match-dashboard.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'}
+  { path: '', component: MatchDashboardComponent, pathMatch: 'full'}
 ];
