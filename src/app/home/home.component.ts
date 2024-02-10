@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { MatchDashboardComponent } from '../matches/match-dashboard/match-dashboard.component';
 
 @Component({
@@ -12,16 +12,25 @@ import { MatchDashboardComponent } from '../matches/match-dashboard/match-dashbo
 })
 export class HomeComponent {
   hideSearchBar: boolean;
-  constructor(private router: Router) {
-    this.hideSearchBar = true;
+  currentRoute: string = '';
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.hideSearchBar = false;
     router.events.subscribe((route) => {
       if(route instanceof NavigationEnd) {
+        this.currentRoute = route.url;
         if(route.url != '/') {
-          this.hideSearchBar = true;
+          // this.hideSearchBar = true;
         } else {
-          this.hideSearchBar = false;
+          // this.hideSearchBar = false;
         }
       }
     })
+  }
+
+  createForm() {
+    console.log(this.currentRoute)
   }
 }

@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: '', component: SeasonDashboardComponent, pathMatch: 'full'},
   { path: 'season/:id', component: MatchDashboardComponent },
   { path: 'match/:id', component: MatchInfoComponent },
+  { path: 'season/:seasonId/match/:matchId', component: MatchInfoComponent},
   { path: '**', redirectTo: '/' }
 ];

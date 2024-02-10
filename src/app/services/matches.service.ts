@@ -27,8 +27,8 @@ export class MatchesService {
     })
   }
 
-  async getMatches() {
-    const snapshot = await getDocs(this.matchesCol);
+  async getMatches(seasonId: string) {
+    const snapshot = await getDocs(collection(this.db, 'seasons/' + seasonId + '/matches'));
     return snapshot;
   }
 
