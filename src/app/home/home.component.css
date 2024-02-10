@@ -29,3 +29,21 @@ button {
       grid-template-columns: 1fr;
   }
 }
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  .search-bar {
+    flex-grow: 8;
+    button {
+      width: 17.5%;
+    }
+  }
+  .create-button {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 4;
+    button {
+      width: 35%;
+    }
+  }
+}
